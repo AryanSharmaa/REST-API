@@ -1,0 +1,28 @@
+Components of a REST API Request
+
+Use Chrome’s Developer Tools to monitor the API request made. Let’s look at the different components of the REST API request.
+
+Request URL: https://www.metaweather.com/api/location/search/?query=san
+
+Request Method: GET which denotes the type of HTTP request made. GET means data needs to be fetched.
+
+Request Headers: eg: accept, accept-encoding - used to send additional info like the type of encoding that the requesting application (browser) supports
+
+Request Body: is empty for the current request but can be used for sending additional information like a file’s content when uploading it to the server.
+
+
+
+
+The Request URL is made up of the
+
+Scheme: https - denotes the request was made using the HTTPS protocol ie, secure version of the HTTP protocol
+
+Root-endpoint: www.metaweather.com - defines the API provider
+
+Path: /api/location/search/ - there will be one api path for each type of resource. Here, we are asking for the resource named location.
+
+Query parameter: ?query=san - the part of the URL that comes after a ? character is the query parameter. It specifies the search criteria for the resource. Here, the locations returned get filtered by the value of the query parameter, query we provide.
+
+
+For every API request, the corresponding API response also contains HTTP headers that the server sends back along with the data requested. See if you can answer some questions based on these response headers.
+
