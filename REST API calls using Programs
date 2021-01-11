@@ -1,1 +1,54 @@
+We saw how to make REST API calls using the browser. But, what was the purpose of having an API? It was for applications to communicate with each other, right? Let’s now see how to do that programmatically.
 
+
+Use curl on your command line to make a REST API call to (https://www.metaweather.com/api/location/search/?query=san). This fetches location information for locations matching the query parameter san.
+
+JAVA PROGRAM :)
+
+import java.io.IOException;
+
+import java.io.InputStreamReader;
+
+import java.net.HttpURLConnection;
+
+import java.net.MalformedURLException;
+
+import java.net.URL;
+
+public class Main {
+
+	public static void main(String[] args) throws MalformedURLException, IOException {
+
+		// create url
+
+		URL url = new URL("https://www.metaweather.com/api/location/search/?query=san");
+
+		// Send Get request and fetch data
+
+		HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+
+		conn.setRequestMethod("GET");
+
+		BufferedReader br = new BufferedReader(new InputStreamReader(
+
+			(conn.getInputStream())));
+
+
+		// Read data line-by-line from buffer & print it out
+
+		String output;
+
+		while ((output = br.readLine()) != null) {
+
+			System.out.println(output);
+
+		}
+
+
+		conn.disconnect();
+
+	}
+
+}
+
+Hope you'll enjoy this!!.
